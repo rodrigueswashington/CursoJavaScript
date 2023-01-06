@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body{
+            font: normal 15pt arial;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Sistema de Nacionalidade</h1>
+    Em qual país você nasceu? <input type="txt" name="txtnacion" id="txtnacion">
+    <input type="button" value="Confirmar" onclick="confirmar()">
+    <div id="resultado">
+        
+    </div>
+    <script>
+        function confirmar(){
+            var txtnac = window.document.getElementById('txtnacion')
+            var resultado = window.document.querySelector('div#resultado')
+            var nacionalidade = txtnac.value
+            resultado.innerHTML = `<p>Vivendo em <strong>${nacionalidade}</strong>, <p>`
+            if (nacionalidade == 'Brasil'){
+                resultado.innerHTML += 'você é brasileiro'
+            }
+            else{
+                resultado.innerHTML += `você é <strong>estrangeiro</strong>`
+            }
+
+        }
+    </script>
+</body>
+</html>
